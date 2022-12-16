@@ -98,29 +98,37 @@ let largestLoss = { date: "", amount: 0};
 //The total number of months in the dataset can be determined by checking the length of the array
 
 totalLength = finances.length;
-console.log(totalLength)
+
 
 //The net total of profit/losses over period. We can start this by setting up a loop, then adding the value in column 2 of the array to totalProfits
 
 for (var rowIndex = 0; rowIndex < finances.length; rowIndex++){
     totalProfits += (finances [rowIndex] [1])
-}
-console.log(totalProfits);
-
-
+    
 //the average of changes in profit/losses
 //calculate each change by subtracting previous month from this month
 // Will need to track total change in profits from month to month, then find average
-//(total/total number of changes) => total change/(months - 1)
-//maybe put all changes into an array using .push(...)?
+//(total/total number of changes) => total change/(months - 1), this works as written, but will need to be declared outside of the loop.
 
 //The greatest increase in profits (date and amount) over entire period
 // start with 0
-//  check last increase. if bigger than last increase -1, track it.
-//  loop this.
+// check last increase. if bigger than last increase -1, track it within a loop. Track total change in the same loop for the future - we'll need this to calculate the average change.
+if (rowIndex>0) {
+    let change = finances[rowIndex][1] - finances[rowIndex - 1][1];
+    totalChange += change;
+    if (change > largestProfit.amount) {
+        largestProfit.date = finances[rowIndex][0]
+        largestProfit.amount = change;
+    }
+} 
 
-//Greatest increase in losses over entire period. 
 
+}
+console.log(totalLength);
+console.log(totalProfits);
+console.log(totalChange);
+console.log(largestProfit.date);
+console.log(largestProfit.amount);
 // console output format!
 // Financial Analysis
 // ----------------------------
