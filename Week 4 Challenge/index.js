@@ -87,15 +87,26 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-//The total number of months in the dataset
-//Figure out how many rows there are in the finances variable
+//Store the results in the following variables
+let totalLength = 0;
+let totalProfits = 0;
+let totalChange = 0;
+let averageChange = 0;
+let largestProfit = { date: "", amount: 0};
+let largestLoss = { date: "", amount: 0};
 
-var length = finances.length
-console.log(length)
+//The total number of months in the dataset can be determined by checking the length of the array
 
+totalLength = finances.length;
+console.log(totalLength)
 
-//The net total of profit/losses over period
-//add everything, probably a loop
+//The net total of profit/losses over period. We can start this by setting up a loop, then adding the value in column 2 of the array to totalProfits
+
+for (var rowIndex = 0; rowIndex < finances.length; rowIndex++){
+    totalProfits += (finances [rowIndex] [1])
+}
+console.log(totalProfits);
+
 
 //the average of changes in profit/losses
 //calculate each change by subtracting previous month from this month
