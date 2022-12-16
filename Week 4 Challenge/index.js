@@ -87,11 +87,12 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+//The total number of months in the dataset
+//Figure out how many rows there are in the finances variable
+
 var length = finances.length
 console.log(length)
 
-//The total number of months in the dataset
-//Figure out how many rows there are in the finances variable
 
 //The net total of profit/losses over period
 //add everything, probably a loop
@@ -108,3 +109,12 @@ console.log(length)
 //  loop this.
 
 //Greatest increase in losses over entire period. 
+
+// console output format!
+// Financial Analysis
+// ----------------------------
+// Total Months: 25
+// Total: $2561231
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
