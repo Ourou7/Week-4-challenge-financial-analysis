@@ -104,7 +104,7 @@ totalLength = finances.length;
 
 for (var rowIndex = 0; rowIndex < finances.length; rowIndex++){
     totalProfits += (finances [rowIndex] [1])
-    
+
 //the average of changes in profit/losses
 //calculate each change by subtracting previous month from this month
 // Will need to track total change in profits from month to month, then find average
@@ -120,6 +120,12 @@ if (rowIndex>0) {
         largestProfit.date = finances[rowIndex][0]
         largestProfit.amount = change;
     }
+//The greatest increase in losses.
+// as above, just invert the check on change
+    if (change < largestLoss.amount) {
+        largestLoss.date = finances[rowIndex][0]
+        largestLoss.amount = change;
+    }
 } 
 
 
@@ -129,6 +135,8 @@ console.log(totalProfits);
 console.log(totalChange);
 console.log(largestProfit.date);
 console.log(largestProfit.amount);
+console.log(largestLoss.date);
+console.log(largestLoss.amount);
 // console output format!
 // Financial Analysis
 // ----------------------------
