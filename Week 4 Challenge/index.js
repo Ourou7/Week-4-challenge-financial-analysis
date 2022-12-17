@@ -131,9 +131,13 @@ for (var rowIndex = 0; rowIndex < finances.length; rowIndex++) {
 
 //Now we're outside the loop, we can calculate the average change.
 averageChange = totalChange / (totalLength - 1); // number of changes is number of months - 1.
+const average2 = averageChange.toFixed(2); // this sets the new value to 2 decimal places.
+
 //Output into console below, as per output specs.
+
+const average2 = averageChange.toFixed(2);
 console.log(`Total months: ${totalLength}`);
 console.log(`Net total: ${totalProfits}`);
-console.log(`Average change: ${totalChange}`);
+console.log(`Average change: ${average2}`);
 console.log(`Greatest increase: ${largestProfit.date} (${largestProfit.amount})`);
 console.log(`Greatest decrease: ${largestLoss.date} (${largestLoss.amount})`);
